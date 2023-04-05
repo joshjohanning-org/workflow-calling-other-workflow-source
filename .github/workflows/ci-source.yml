@@ -25,6 +25,5 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}" 
-
+          echo "Log level: ${{ github.event.inputs.logLevel == '' && 'test' || github.event.inputs.logLevel }}"
+          echo "Tags: ${{ github.event.inputs.tags == '' && 'my-tag' || github.event.inputs.tags }}" 
