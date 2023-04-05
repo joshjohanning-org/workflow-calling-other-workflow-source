@@ -52,3 +52,11 @@ jobs:
                 "tags": "using-actions-script",
               }
             })
+            
+            
+      - name: Trigger workflow via marketplace action
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: CI-target
+          inputs: '{ "logLevel": "error", "tags": "using-action" }'
+
